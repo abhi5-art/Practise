@@ -57,7 +57,7 @@ public:
         return ans;
     }
 };
-
+```
 
 ## Problem 2: Next Greater Element II
 
@@ -75,6 +75,9 @@ public:
 - Maintained a monotonic decreasing stack storing indices.
 - Whenever current element became greater than stack top element, updated its next greater element.
 - Stored answers in temporary array and copied first `n` answers to final result.
+
+### Time Complexity
+- `O(n)` for mapping + stack preprocessing
 
 ### Solution
 ```cpp
@@ -98,3 +101,4 @@ public:
         return ans;
     }
 };
+```
