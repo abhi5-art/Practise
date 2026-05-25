@@ -10,7 +10,7 @@ Today's preparation :
 
 ## Problem 1: Next Greater Element I
 
-- **Platform:** :contentReference[oaicite:0]{index=0}
+- **Platform:** : Leetcode
 - **Topic:** Monotonic Stack
 - **Difficulty:** Easy
 - **Concepts Used:**
@@ -61,7 +61,7 @@ public:
 
 ## Problem 2: Next Greater Element II
 
-- **Platform:** :contentReference[oaicite:0]{index=0}
+- **Platform:** : Leetcode
 - **Topic:** Monotonic Stack
 - **Difficulty:** Medium
 - **Concepts Used:**
