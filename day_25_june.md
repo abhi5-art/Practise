@@ -137,3 +137,105 @@ public:
 };
 ```
 
+## Problem 3: Sort the People
+
+### 🔹 Topic
+- Arrays
+- Sorting
+- Pair STL
+
+### 🔹 Difficulty
+- Easy
+
+### 🔹 Approach
+- Created a vector of pairs where each pair stored a person's height and corresponding name.
+- Traversed both input arrays and populated the pair vector as `(height, name)`.
+- Sorted the vector in descending order of height using a custom comparator.
+- Traversed the sorted vector and updated the `names` array with names in sorted order.
+- Returned the reordered `names` array.
+
+### 🔹 Time Complexity
+- O(n log n)
+  - Sorting the vector of pairs dominates the overall complexity.
+
+### 🔹 Space Complexity
+- O(n)
+  - Additional space is used to store the vector of `(height, name)` pairs.
+
+### 🔹 Concepts Used
+- Vector of Pairs
+- Custom Comparator
+- Sorting
+- Array Traversal
+
+### Solution
+```cpp
+class Solution {
+public:
+    vector<string> sortPeople(vector<string>& names, vector<int>& heights) {
+        int n=names.size();
+        vector<pair<int,string>>temp(n);
+        for(int i=0;i<n;i++){
+            temp[i].first=heights[i];
+            temp[i].second=names[i];
+        }
+        sort(temp.begin(),temp.end(), [](const auto&a, const auto&b){
+            return a.first > b.first;
+        });
+
+        for(int i=0;i<n;i++){
+            names[i]=temp[i].second;
+        }
+
+        return names;
+    }
+};
+```
+
+## Problem 4: Sort the Students by Their Kth Score
+
+### 🔹 Topic
+- Arrays
+- Sorting
+- Custom Comparator
+
+### 🔹 Difficulty
+- Medium
+
+### 🔹 Approach
+- Observed that students need to be sorted based on their `k`th score in descending order.
+- Applied the STL `sort()` function directly on the 2D vector.
+- Used a custom comparator (lambda function) to compare the `k`th score of two students.
+- Placed the student with the higher `k`th score before the other.
+- Returned the sorted 2D array.
+
+### 🔹 Time Complexity
+- O(n log n)
+  - Sorting `n` students dominates the overall complexity.
+
+### 🔹 Space Complexity
+- O(log n)
+  - Auxiliary space used internally by the STL sorting algorithm (recursive stack).
+
+### 🔹 Concepts Used
+- 2D Arrays
+- STL `sort()`
+- Lambda Function
+- Custom Comparator
+
+### Solution
+```cpp
+class Solution {
+public:
+    vector<vector<int>> sortTheStudents(vector<vector<int>>& score, int k) {
+        sort(score.begin(), score.end(), [k](const auto&a, const auto&b){
+            return a[k] > b[k];
+        });
+
+        return score;
+    }
+};
+```
+
+
+
